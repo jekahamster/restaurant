@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS cnt FROM `Order_statistics` WHERE `date` >= '2018-12-31 00:00:00' AND `date` <= '2018-12-31 23:59:59'

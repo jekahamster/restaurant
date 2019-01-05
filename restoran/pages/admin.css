@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* { padding: 0px; margin: 0px; }
+html { height: 100%; }
+body { height: 100%; width: 100%; font-family: 'Roboto', sans-serif; background-color: #2185f5;}
+a {text-decoration: none;}
+button { outline: none; border: 1px solid silver; border-radius: 10px; }
+button:active { background-color: #c4c4c4; }
+.user-hide { display: none; }
+
+/*#00ffb2 - operator*/
+
+#background-block {
+	width: 100%;
+	min-height: 100%;
+}
+
+#go-back {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+	background-color: #f9f9f9;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+#go-back img {
+	width: 100%;
+	height: 100%;
+}
+
+#content {
+	background-color: #f9f9f9;
+	width: 80%;
+	min-height: 90%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+#welcome {
+	text-align: center;
+	padding: 15px 0 15px 0;
+	width: 100%;
+	font-size: 1.5em;
+	border-bottom: 1px solid silver;
+	background-color: #eaeaea;
+}
+
+/*End main*/
+
+#dishes {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#dishes > div:nth-child(1) {
+	font-size: 1.5em;
+	padding-bottom: 10px;
+}
+
+#dishes-filter {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-column-gap: 10px;
+	width: 60%;
+	margin-bottom: 20px;
+}
+
+#dishes-filter > button {
+	font-size: 1.2em;
+	padding: 0px;
+}
+
+#dishes-list {
+	width: 98%;
+}
+
+#dishes-lisgt-head > tr {
+	display: grid;
+	grid-template-columns: 5% 5% 10% 10% 15% 15% 20% 20%;
+}
+
+#dishes-lisgt-head > tr > th {
+	text-align: center;
+}
+
+#dishes-lisgt-body tr td > div {
+	/* 8px - 9 бордера по средине, но берем 9 потому что тамбличка накладывается на табличку
+	и выходит что бордер основной таблицы = 2px */
+	min-height: calc(49px - 1px);
+	max-height: calc(49px * 10 - 8px);  
+	overflow: auto;
+}
+
+#out-dishes-list tr {
+	display: grid;
+	grid-template-columns: 5% 5% 10% 10% 15% 15% 20% 20%;
+}
+
+#out-dishes-list tr td {
+	text-align: center;
+}
+
+#out-dishes-list tr td:nth-child(1) {
+	padding-top: 12px;
+	padding-left: 25%;
+}
+
+#out-dishes-list tr td:nth-child(3),
+#out-dishes-list tr td:nth-child(7), 
+#out-dishes-list tr td:nth-child(8) {
+	padding: 0px;
+	white-space: pre-wrap;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#dishes-buttons {
+	width: 100%;
+	margin-top: 10px;
+	left: 0px;
+}
+
+#dishes-buttons > div {
+	display: inline-block;
+}
+
+/*Append dish*/
+
+#append-dish {
+	overflow: hidden;
+	background-color: #f2f2f2;
+	width: 98%;	height: 0px;
+	border: 0px solid rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 
+				0 3px 1px -2px rgba(0,0,0,.2),
+				0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#append-dish > div:nth-child(1) {
+	font-size: 1.5em;
+}
+
+#dish-settings {
+	width: 100%;
+}
+
+#settings-page-1 {
+	width: 99%;
+	height: 470px;
+	display: inline-block;
+	overflow: hidden;
+	padding-top: 10px;
+}
+
+#settings-list-1 {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	grid-row-gap: 20px;
+	width: 100%;
+	height: 390px;
+}
+
+#settings-list-1 > div > label {
+	font-size: 1.2em;
+}
+
+#dish-settings-next {
+	position: relative;
+	left: 17%;
+}
+
+#settings-list-1 > div > input[type="text"], 
+#settings-list-1 > div > input[type="time"],
+#settings-list-1 > div > select {
+	text-align: center;
+	outline: none;
+	width: 40%;
+	font-size: 1.2em;
+	height: calc(1.2em + 10px);
+	border: 1px solid silver;
+	border-radius: 4px;
+
+}
+
+#settings-page-1 > div:nth-child(2) {
+	height: 60px;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#settings-page-2 {
+	width: 0%;
+	height: 470px;
+	display: inline-block;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+#settings-list-2 {
+	width: 100%;
+	height: 390px;
+	overflow: auto;
+}
+
+
+.settings-list-2-block {
+	padding-top: 20px;
+}
+
+.number-of-products-label {
+	font-size: 1.2em;
+	margin-top: 20px;
+}
+
+.number-of-products {
+	text-align: center;
+	outline: none;
+	width: 40%;
+	font-size: 1.2em;
+	height: calc(1.2em + 10px);
+	border: 1px solid silver;
+	border-radius: 4px;
+
+}
+
+#settings-page-2 > div:nth-child(2) {
+	height: 60px;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#dish-settings-back {
+	position: relative;
+	right: 13%;
+}
+
+#dish-settings-next2 {
+	position: relative;
+	left: 13%;
+}
+
+#settings-page-3 {
+	width: 0%;
+	height: 470px;
+	display: inline-block;
+	overflow: hidden;
+	overflow-y: auto;
+
+}
+
+#settings-list-3 {
+	display: grid;
+	grid-template-rows: repeat(6, 1fr);
+	width: 100%;
+	height: 390px;
+	overflow: auto;
+}
+
+#settings-list-3 > div > label {
+	font-size: 1.2em;
+}
+
+#settings-list-3 > div > input[type="text"],
+#settings-list-3 > div > input[type="time"],
+#settings-list-3 > div > select {
+	text-align: center;
+	outline: none;
+	width: 40%;
+	font-size: 1.2em;
+	height: calc(1.2em + 10px);
+	border: 1px solid silver;
+	border-radius: 4px;
+}
+
+#settings-page-3 > div:nth-child(2) {
+	height: 60px;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#dish-settings-back2 {
+	position: relative;
+	right: 13%;
+}
+
+#dish-settings-done {
+	position: relative;
+	left: 13%;
+}
+
+
+/*Edit dish*/
+
+#edit-dish {
+	overflow: hidden;
+	background-color: #f2f2f2;
+	width: 98%;
+	height: 0px;
+	border: 0px solid rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 
+				0 3px 1px -2px rgba(0,0,0,.2),
+				0 1px 5px 0 rgba(0,0,0,.12);
+
+}
+
+#edit-dish > div:nth-child(1) {
+	font-size: 1.5em;
+}
+
+#selected-dishes-list {
+	border-width: 2px 0px;
+	border-style: solid;
+	border-color: silver;
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 100%;
+	min-height: 220px;
+}
+
+.selected-dish-card {
+	display: inline-block;
+	background-color: white;
+	height: 200px;
+	width: 200px;
+	margin: 10px 10px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 
+				0 3px 1px -2px rgba(0,0,0,.2),
+				0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.selected-dish-name {
+	height: 10%;
+}
+
+.selected-dish-image {
+	width: 100%;
+	height: 90%;
+}
+
+.selected-dish-image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0px 0px 5px 5px;
+}
+
+#dish-info {
+	width: 100%;
+}
+
+#dish-info > div {
+	padding-top: 10px;
+}
+
+#dish-info > div > label {
+	font-size: 1.2em;
+}
+
+#dish-info > div > input[type="text"],
+#dish-info > div > input[type="time"],
+#dish-info > div > select {
+	text-align: center;
+	outline: none;
+	width: 40%;
+	font-size: 1.2em;
+	height: calc(1.2em + 10px);
+	border: 1px solid silver;
+	border-radius: 4px;
+}
+
+#dish-info-product {
+	width: 40%;
+	grid-column-gap: 10px;
+	border: 2px solid silver;
+	border-radius: 2px;
+	padding: 0px 10px 10px 10px;
+	overflow: auto;
+/*	min-height: 30px;*/
+	height: 235px;
+
+}
+
+#dish-info-product > div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	margin-top: 10px;
+}
+
+#dish-info-product > div > input {
+	width: 100%;
+	height: 1.5em;
+	text-align: center;
+	font-size: 1.2em;
+	outline: none;
+	border: 1px solid silver;
+	border-radius: 4px;
+}
+
+
+/*Keys*/
+
+#keys-list {
+    width: 100%;
+}
+
+#registration_keys {
+    width: auto;
+}
+
+#keys-list > div:nth-child(1) {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+
+.keys {
+	border: none;
+	outline: none;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#keys-buttons {
+	margin-top: 10px;
+}
+
+
+/*Storage*/
+
+#storage > div:nth-child(1) {
+	font-size: 1.5em;
+	padding-bottom: 10px;
+}
+
+#products-filter {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 10px;
+	width: 60%;
+	margin-bottom: 20px;
+}
+
+#products-list {
+	width: 98%;
+}
+
+#products-lisgt-head > tr {
+	display: grid;
+	grid-template-columns: 10% 15% 25% 25% 25%;
+}
+
+#products-lisgt-head > tr > th {
+	text-align: center;
+}
+
+#products-lisgt-body tr td > div {
+	/* 8px - 9 бордера по средине, но берем 9 потому что тамбличка накладывается на табличку
+	и выходит что бордер основной таблицы = 2px */
+	min-height: calc(49px - 1px);
+	max-height: calc(49px * 10 - 8px);  
+	overflow: auto;
+}
+
+#out-products-list tr {
+	display: grid;
+	grid-template-columns: 10% 15% 25% 25% 25%;
+}
+
+#out-products-list tr td {
+	text-align: center;
+}
+
+#out-products-list tr td:nth-child(1) {
+	padding-top: 12px;
+	padding-left: 25%;
+}
+
+#out-products-list tr td:nth-child(3),
+#out-products-list tr td:nth-child(7), 
+#out-products-list tr td:nth-child(8) {
+	padding: 0px;
+	white-space: pre-wrap;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#storage-buttons {
+	margin-top: 10px;
+}
+
+#append-product {
+	display: none;
+	width: 98%;
+	overflow: hidden;
+	background-color: #f2f2f2;
+	margin-top: 10px;
+	border: 0px solid rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 
+				0 3px 1px -2px rgba(0,0,0,.2), 
+				0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#append-product > span {
+	font-size: 1.5em;
+}
+
+#append-product > div > div {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+#append-product input {
+	text-align: center;
+	outline: none;
+	font-size: 1.2em;
+	height: calc(1.2em + 10px);
+	border: 1px solid silver;
+	border-radius: 5px;
+	width: 50%;
+}
+
+#edit-product > div:nth-child(3) {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#edit-product {
+	display: none;
+	width: 98%;
+	overflow: hidden;
+	background-color: #f2f2f2;
+	margin-top: 10px;
+	border: 0px solid rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 
+				0 3px 1px -2px rgba(0,0,0,.2), 
+				0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#edit-product > span {
+	font-size: 1.5em;
+}
+
+#edit-product > div > div {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+#edit-product input, select {
+	text-align: center;
+	outline: none;
+	font-size: 1.2em;
+	height: calc(1.2em + 10px);
+	border: 1px solid silver;
+	border-radius: 5px;
+	width: 50%;
+}
+
+#edit-product select {
+	text-align-last: center;
+}
+
+#edit-product > div:nth-child(3) {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+/*Orders*/
+
+#orders > div:nth-child(1) {
+	font-size: 1.5em;
+	padding-bottom: 10px;
+}
+
+#orders-filter {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 10px;
+	width: 60%;
+	margin-bottom: 20px;
+}
+
+#orders-list {
+	width: 98%;
+}
+
+#orders-lisgt-head > tr {
+	display: grid;
+	grid-template-columns: 10% 15% 25% 25% 25%;
+}
+
+#orders-lisgt-head > tr > th {
+	text-align: center;
+}
+
+#orders-lisgt-body tr td > div {
+	/* 8px - 9 бордера по средине, но берем 9 потому что тамбличка накладывается на табличку
+	и выходит что бордер основной таблицы = 2px */
+	min-height: calc(49px - 1px);
+	max-height: calc(49px * 10 - 8px);  
+	overflow: auto;
+}
+
+#out-orders-list tr {
+	display: grid;
+	grid-template-columns: 10% 15% 25% 25% 25%;
+}
+
+#out-orders-list tr td {
+	text-align: center;
+}
+
+#out-orders-list tr td:nth-child(1) {
+	padding-top: 12px;
+	padding-left: 25%;
+}
+
+#out-orders-list tr td:nth-child(3),
+#out-orders-list tr td:nth-child(7), 
+#out-orders-list tr td:nth-child(8) {
+	padding: 0px;
+	white-space: pre-wrap;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#orders-buttons {
+	margin-top: 10px;
+}
+
+
+/*Statistic*/
+
+
+
+@media (max-width: 1100px) {
+	* {font-size: 1em;}
+    
+    #content {
+        width: 95%;
+    }
+    
+    #dishes-filter > button {
+        font-size: 0.8em;
+    }
+    
+	#products-filter > button {
+	    font-size: 0.8em;
+	}
+
+
+}
+
+
+
+

@@ -1,0 +1,21 @@
+php_value display_errors Off
+php_value date.timezone Europe/Kiev
+AddDefaultCharset UTF-8
+RewriteEngine On
+
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [QSA,R=301,L] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
+
+Options All -Indexes
+<FilesMatch "error_log">
+    order deny,allow
+    deny from all
+</FilesMatch>
+
+##order deny,allow
+##deny from all
+##allow from 95.133.188.154
