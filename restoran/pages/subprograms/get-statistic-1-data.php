@@ -33,7 +33,7 @@ mysqli_query($connection, "set names 'utf8'");
 
 	for ($i = 1; $i <= 31; $i++) {
 		$d = "" . intval($i/10) . $i%10; 
-		$sql = "SELECT COUNT(*) AS cnt FROM `Order_statistics` WHERE `date` >= '2018-".$month_array[$month]."-$d 00:00:00' AND `date` <= '2018-".$month_array[ $month]."-$d 23:59:59'";
+		$sql = "SELECT COUNT(*) AS cnt FROM `Order_statistics` WHERE `date` >= '$year-".$month_array[$month]."-$d 00:00:00' AND `date` <= '$year-".$month_array[ $month]."-$d 23:59:59'";
 		file_put_contents("kek.txt", $sql);
 		$search_date = mysqli_query($connection, $sql);
 		$search_date_res = mysqli_fetch_assoc($search_date);

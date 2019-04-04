@@ -89,6 +89,7 @@
 		$.ajax({
 			url: 'subprograms/get-statistic-2-data.php',
 			type: 'POST', 
+			async: false,
 			data: ({
 				'year': $('#statistic-2-year').val(),
 				'month' : x
@@ -818,8 +819,8 @@
 			}
 			
 
-			setTimeout('drawww()', 500);
-
+			// setTimeout('drawww()', 500);
+			drawww();
 			
 
 
@@ -1393,7 +1394,14 @@
 		    	<div>
 		    		<label>Рік:</label> <br>
 		    		<select id='statistic-1-year'>
-		    			<option>2018</option>
+		    			<?php 
+		    				$query = mysqli_query($connection, "SELECT DISTINCT YEAR(date) as `date` FROM `Orders`;");
+		    				for ($i = 0; $i < mysqli_num_rows($query); $i++)
+		    				{
+		    					$query_res = mysqli_fetch_assoc($query);
+		    					echo "<option>" . $query_res['date'] . "</option>";
+		    				}
+		    			?>
 		    		</select>
 		    	</div>
 		    </div>
@@ -1410,7 +1418,14 @@
 				<div>
 					<label>Рік:</label> <br>
 					<select id='statistic-2-year'> 
-						<option>2018</option>
+						<?php 
+		    				$query = mysqli_query($connection, "SELECT DISTINCT YEAR(date) as `date` FROM `Orders`;");
+		    				for ($i = 0; $i < mysqli_num_rows($query); $i++)
+		    				{
+		    					$query_res = mysqli_fetch_assoc($query);
+		    					echo "<option>" . $query_res['date'] . "</option>";
+		    				}
+		    			?>
 					</select>
 				</div>
 			</div>
