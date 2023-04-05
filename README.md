@@ -1,3 +1,6 @@
-# restoran
+# Restaurant
+
+Tournament challenge. 2018-2019
+
 Eat For You
 [EatForYou (Tournament).pdf](https://github.com/jekahamster/restoran/files/6912754/EatForYou.Tournament.pdf)
